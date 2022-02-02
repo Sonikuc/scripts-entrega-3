@@ -1,0 +1,4 @@
+Se deben modificar los inserts de catalogue, p_designers, users que seria la nueva tabla clients, annual_payments, month_menu, c_offers
+Se debe añadir los inserts para p_categories
+
+Se debe eliminar el insert de p_catalogues, no usamos esa tabla

@@ -1,0 +1,416 @@
+CREATE TABLE  countries
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    continent character varying(255)  NOT NULL,
+    moneda character(20)  NOT NULL,
+    "Europe_Union" boolean NOT NULL,
+    catolic boolean NOT NULL,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT countries_pkey PRIMARY KEY (id)
+);
+
+
+CREATE TABLE  cities
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    country_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT cities_pkey PRIMARY KEY (id),
+    CONSTRAINT cities_country_id_foreign FOREIGN KEY (country_id)
+        REFERENCES countries (id)         
+);
+
+CREATE TABLE  clients
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    second_name character varying(255) ,
+    last_name character varying(255)  NOT NULL,
+    second_last_name character varying(255) ,
+	email character varying NOT NULL,
+    fecha_nac date NOT NULL,
+   -- role_id bigint NOT NULL,
+    city_id bigint NOT NULL,
+  --  email_verified_at timestamp(0) without time zone,
+  --  profile_photo_path character varying(2048),
+  --  password character varying(255)NOT NULL,
+  --  remember_token character varying(100),
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+  --  two_factor_secret text,
+  --  two_factor_recovery_codes text,
+  --  CONSTRAINT users_email_unique UNIQUE (email),
+
+    CONSTRAINT users_pkey PRIMARY KEY (id),
+   -- CONSTRAINT users_role_id_foreign FOREIGN KEY (role_id)
+   --     REFERENCES roles (id), 
+    CONSTRAINT users_city_id_foreign FOREIGN KEY (city_id)
+        REFERENCES cities (id)       
+);
+
+
+CREATE TABLE  designers
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    last_name character varying(255)  NOT NULL,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+    CONSTRAINT designers_pkey PRIMARY KEY (id)
+);
+
+CREATE TABLE  categories
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    description character varying(255)  NOT NULL,
+    level character(1)  NOT NULL,
+	parent_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+    CONSTRAINT categories_pkey PRIMARY KEY (id),
+	CONSTRAINT categories_parent_id_foreign FOREIGN KEY (parent_id)
+		REFERENCES categories (id)
+);
+
+
+CREATE TABLE  dishes
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    description character varying(255)  NOT NULL,
+    type character varying(255)  NOT NULL,
+    "isSueco" boolean NOT NULL,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT dishes_pkey PRIMARY KEY (id)
+);
+
+
+CREATE TABLE  products
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    nsueco character varying(255)  NOT NULL,
+    montaje boolean NOT NULL,
+    tipo character varying(42),
+    caract text  NOT NULL,
+    instrucc text  NOT NULL,
+    descrip text  NOT NULL,
+    category_id bigint NOT NULL,
+    parent_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT products_pkey PRIMARY KEY (id),
+    CONSTRAINT products_category_id_foreign FOREIGN KEY (category_id)
+        REFERENCES categories (id),
+    CONSTRAINT products_parent_id_foreign FOREIGN KEY (parent_id)
+        REFERENCES products (id)
+);
+
+CREATE TABLE  p_designers
+(
+    --id bigint NOT NULL,
+    product_id bigint NOT NULL,
+    designer_id bigint NOT NULL,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT product_designers_pkeyone PRIMARY KEY (product_id, designer_id),  --PK1
+    CONSTRAINT p_designers_designer_id_foreign FOREIGN KEY (designer_id)
+        REFERENCES designers (id),        
+    CONSTRAINT p_designers_product_id_foreign FOREIGN KEY (product_id)
+        REFERENCES products (id)        
+);
+
+CREATE TABLE p_categories
+(
+    product_id bigint NOT NULL,
+    category_id bigint NOT NULL,
+
+    CONSTRAINT product_categories_pkeyone PRIMARY KEY (product_id, category_id),  --PK1
+    CONSTRAINT p_categories_category_id_foreign FOREIGN KEY (category_id)
+        REFERENCES categories (id),        
+    CONSTRAINT p_categories_product_id_foreign FOREIGN KEY (product_id)
+        REFERENCES products (id)        
+);
+
+
+CREATE TABLE  shops
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    address character varying(255)  NOT NULL,
+    description character varying(255)  NOT NULL,
+    architec_style character varying(255)  NOT NULL,
+    size character varying(255)  NOT NULL,
+    kids_area character varying(255)  NOT NULL,
+    corridors character varying(255)  NOT NULL,
+    cash_registers bigint NOT NULL,
+    stock_size character varying(255)  NOT NULL,
+    opening_date date NOT NULL,
+    city_id bigint NOT NULL,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT shops_pkey PRIMARY KEY (id),
+    CONSTRAINT shops_city_id_foreign FOREIGN KEY (city_id)
+        REFERENCES cities (id)       
+);
+
+CREATE TABLE  catalogues
+(   
+    id bigint NOT NULL UNIQUE,
+    product_id bigint NOT NULL,
+    country_id bigint NOT NULL,
+	price numeric(8,2) NOT NULL,
+    start_date date NOT NULL,
+    end_date date,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+    CONSTRAINT catalogues_pkeyone PRIMARY KEY (product_id, start_date, country_id),
+    CONSTRAINT catalogues_country_id_foreign FOREIGN KEY (country_id)
+        REFERENCES countries (id),
+    CONSTRAINT catalogues_products_id_foreign FOREIGN KEY (product_id)
+        REFERENCES products (id)        
+);
+
+
+CREATE TABLE  sons
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    last_name character varying(255)  NOT NULL,
+    date_of_birth date NOT NULL,
+    gender character(1)  NOT NULL,
+    client_id bigint NOT NULL,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT sons_pkey PRIMARY KEY (id),
+	constraint gender_values check (gender in ('F','M')),
+    CONSTRAINT sons_client_id_foreign FOREIGN KEY (client_id)
+        REFERENCES clients (id)
+);
+
+
+CREATE TABLE  affiliated_clients
+(
+    id bigint NOT NULL,
+    discount integer NOT NULL,
+    payment boolean NOT NULL,
+    membership_date date NOT NULL,
+    client_id bigint NOT NULL,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT affiliated_clients_pkey PRIMARY KEY (id),
+    CONSTRAINT affiliated_clients_client_id_foreign FOREIGN KEY (client_id)
+        REFERENCES clients (id)
+);
+
+
+CREATE TABLE  annual_payments
+(
+   -- id bigint NOT NULL,
+    year date NOT NULL,
+    affiliated_client_id bigint NOT NULL,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT annual_payments_pkey PRIMARY KEY (year,affiliated_client_id),
+   CONSTRAINT annual_payments_affiliated_client_id_foreign FOREIGN KEY (affiliated_client_id)
+        REFERENCES affiliated_clients (id)         
+);
+
+CREATE TABLE  schedules
+(
+    id bigint NOT NULL,
+    start_time date,
+    end_time date,
+    start_day date NOT NULL,
+    end_day date NOT NULL,
+    country_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT schedules_pkey PRIMARY KEY (id),
+    CONSTRAINT schedules_country_id_foreign FOREIGN KEY (country_id)
+        REFERENCES countries (id)        
+);
+
+
+CREATE TABLE  events
+(
+    id bigint NOT NULL,
+    name character varying(255)  NOT NULL,
+    description character varying(255)  NOT NULL,
+    start_date date NOT NULL,
+    end_date date NOT NULL,
+    shop_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT events_pkey PRIMARY KEY (id),
+    CONSTRAINT events_shop_id_foreign FOREIGN KEY (shop_id)
+        REFERENCES shops (id)        
+);
+
+CREATE TABLE  payment_instruments
+(
+    id bigint NOT NULL,
+    card_number character varying(255),
+    expiration_date date ,
+    email character varying(255),
+    type character varying(255)  NOT NULL,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT payment_instruments_pkey PRIMARY KEY (id)
+);
+
+
+CREATE TABLE  phones
+( 
+	id bigint NOT NULL,
+    code numeric(4)  NOT NULL,
+    "number" numeric(20)  NOT NULL,
+    shop_id bigint,
+    client_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT phones_pkey PRIMARY KEY (id),
+    CONSTRAINT phones_shop_id_foreign FOREIGN KEY (shop_id)
+        REFERENCES shops (id),
+    CONSTRAINT phones_client_id_foreign FOREIGN KEY (client_id)
+        REFERENCES clients (id)          
+);
+
+
+CREATE TABLE  month_menus
+(
+   -- id bigint NOT NULL,
+    start_date date NOT NULL,
+    end_date date,
+    price numeric(8,2),
+    dish_id bigint,
+    shop_id bigint,
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+
+    CONSTRAINT month__menus_pkey PRIMARY KEY (start_date, dish_id, shop_id), --PK1
+    CONSTRAINT month__menus_dish_id_foreign FOREIGN KEY (dish_id)
+        REFERENCES dishes (id),
+    CONSTRAINT month__menus_shop_id_foreign FOREIGN KEY (shop_id)
+        REFERENCES shops (id)        
+);
+
+
+CREATE TABLE  cash_registers
+(
+    id bigint NOT NULL,
+    type character varying(100)  NOT NULL,
+    shop_id bigint,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+
+    CONSTRAINT cash_registers_pkey PRIMARY KEY (id),
+    CONSTRAINT cash_registers_shop_id_foreign FOREIGN KEY (shop_id)
+        REFERENCES shops (id)        
+);
+
+
+CREATE TABLE  offers
+(
+    id bigint NOT NULL,
+    start_date date NOT NULL,
+    end_date date NOT NULL,
+    discount numeric(5,2),
+    shop_id bigint,
+
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+    CONSTRAINT offers_pkey PRIMARY KEY (id),
+    CONSTRAINT offers_shop_id_foreign FOREIGN KEY (shop_id)
+        REFERENCES shops (id)        
+);
+
+
+CREATE TABLE  bills
+(
+    id bigint NOT NULL,
+    issue_date date NOT NULL,
+    total numeric(10,2),
+    transport boolean DEFAULT false,
+    pay_way character varying(100)  NOT NULL,
+    cash_register_id bigint NOT NULL,
+    payment_instrument_id bigint NOT NULL,
+    client_id bigint NOT NULL,
+
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+    CONSTRAINT bills_pkey PRIMARY KEY (id),
+    CONSTRAINT bills_cash_register_id_foreign FOREIGN KEY (cash_register_id)
+        REFERENCES cash_registers (id), 
+        
+        
+    CONSTRAINT bills_payment_instrument_id_foreign FOREIGN KEY (payment_instrument_id)
+        REFERENCES payment_instruments (id),
+
+    CONSTRAINT bills_client_id_foreign FOREIGN KEY (client_id)
+        REFERENCES clients (id)        
+);
+
+
+
+
+
+CREATE TABLE  bill_details
+(
+    id bigint NOT NULL,
+    amount integer NOT NULL,
+    bill_id bigint NOT NULL,
+    catalogue_id bigint NOT NULL,
+
+  --  created_at timestamp(0) without time zone,
+  --  updated_at timestamp(0) without time zone,
+    CONSTRAINT bill_details_pkey PRIMARY KEY (id),
+    CONSTRAINT bill_details_bill_id_foreign FOREIGN KEY (bill_id)
+        REFERENCES bills (id),      
+    CONSTRAINT bill_details_catalogue_id_foreign FOREIGN KEY (catalogue_id)
+        REFERENCES catalogues (id)    
+);
+
+CREATE TABLE  c_offers
+(
+    catalogue_id bigint NOT NULL,
+    offer_id bigint NOT NULL,
+ --   created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+    CONSTRAINT c_offers_id_pkey PRIMARY KEY (catalogue_id,offer_id),
+
+    CONSTRAINT c_offers_catalogue_id_foreign FOREIGN KEY (catalogue_id)
+        REFERENCES catalogues (id), 
+        
+        
+    CONSTRAINT c_offers_offer_id_foreign FOREIGN KEY (offer_id)
+        REFERENCES offers (id)       
+);
+
+--CREATE TABLE  roles
+--(
+--    id bigint NOT NULL,
+ --   name character(30)  NOT NULL,
+--    created_at timestamp(0) without time zone,
+ --   updated_at timestamp(0) without time zone,
+  --  CONSTRAINT roles_pkey PRIMARY KEY (id)
+--);
