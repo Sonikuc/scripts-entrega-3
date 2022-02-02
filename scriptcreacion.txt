@@ -23,7 +23,7 @@ CREATE TABLE  cities
 
     CONSTRAINT cities_pkey PRIMARY KEY (id),
     CONSTRAINT cities_country_id_foreign FOREIGN KEY (country_id)
-        REFERENCES countries (id)         
+        REFERENCES countries (id)        
 );
 
 CREATE TABLE  clients
@@ -50,7 +50,7 @@ CREATE TABLE  clients
     CONSTRAINT users_pkey PRIMARY KEY (id),
    -- CONSTRAINT users_role_id_foreign FOREIGN KEY (role_id)
    --     REFERENCES roles (id), 
-    CONSTRAINT users_city_id_foreign FOREIGN KEY (city_id)
+    CONSTRAINT client_city_id_foreign FOREIGN KEY (city_id)
         REFERENCES cities (id)       
 );
 
@@ -176,7 +176,7 @@ CREATE TABLE  catalogues
     end_date date,
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
-    CONSTRAINT catalogues_pkeyone PRIMARY KEY (product_id, start_date, country_id),
+    CONSTRAINT catalogues_pkeyone PRIMARY KEY (id,product_id, start_date, country_id),
     CONSTRAINT catalogues_country_id_foreign FOREIGN KEY (country_id)
         REFERENCES countries (id),
     CONSTRAINT catalogues_products_id_foreign FOREIGN KEY (product_id)

@@ -1,71 +1,76 @@
-INSERT INTO dishes VALUES (0,'Pizza','Pizza  Margarita','Comida',false,null,null);
+INSERT INTO dishes VALUES (0,'Pizza Margarita','Pizza  Margarita de 8 pedazos familiar','Comida',false);
 
-INSERT INTO dishes VALUES (1,'Pasta','Pasta con queso en salsa especial','Comida',false,null,null);
+INSERT INTO dishes VALUES (1,'Pasta especial','Pasta con queso en salsa especial','Comida',false);
 
-INSERT INTO dishes VALUES (2,'Torta','torta de chocolate','Postre',false,null,null);
+INSERT INTO dishes VALUES (2,'Torta de Chocolate','Rebanada de Torta','Postre',false);
 
-INSERT INTO dishes VALUES (3,'Jugo','Jugo de fresa','Comida',false,null,null);
+INSERT INTO dishes VALUES (3,'Jugo de Fresa','Jugo de fresa','Comida',false);
 
-INSERT INTO dishes VALUES (4,'Tortuga','tortuga en salsa especial','Comida',true,null,null);
+INSERT INTO dishes VALUES (4,'Paella Nro 1','Paella con camarones','Comida',false);
 
-INSERT INTO dishes VALUES (5,'caballo','caballo en brasas','comida',true,null,null);
+INSERT INTO dishes VALUES (5,'Sushi','Sushi con salsa de soja','comida',false);
+
+INSERT INTO dishes VALUES (6,'Paella Nro 2','Paella con pollo','Comida',false);
+INSERT INTO dishes VALUES (7,'Köttbullar','Albondiga Sueca','Comida',true);
+INSERT INTO dishes VALUES (8,'Semla','Postre sueco delicioso','Postre',true);
+INSERT INTO dishes VALUES (9,'Glögg','Vino espaciado calido','Comida',true);
 
 INSERT INTO categories VALUES
 (1,'Lámparas de baño e iluminación',
 'iluminacion para el baño',
-'1',null,null,null);
+'1',null);
 
 INSERT INTO categories VALUES
 (2,'Dispositivos inalámbricos y controles de luz remotos',
 'Dispositivos inalámbricos y controles de luz remotos',
-'1', null,null,null);
+'1', null);
 
 INSERT INTO categories VALUES
 (3,'Organizadores de cables y accesorios',
 'Organizadores de cables y accesorios',
-'1', null,null,null);
+'1', null);
 
 INSERT INTO categories VALUES
 (4,'Smart Lighting',
 'luz inteligente',
-'2', 1,null,null);
+'2', 1);
 
 INSERT INTO categories VALUES
 (5,'Pilas, cables, cargadores y enchufes',
 'Pilas, cables, cargadores y enchufess',
-'2', 3,null,null);
+'2', 3);
 
 INSERT INTO categories VALUES
 (6,'Bombillas LED',
 'Bombillas LED',
-'2', 1,null,null);
+'2', 1);
 
 INSERT INTO categories VALUES
 (7,'Accesorios para móvil y tablet',
 'Accesorios para móvil y tablet',
-'2', 3,null,null);
+'2', 3);
 
 INSERT INTO categories VALUES
 (8,'Altavoces wifi',
 'Dispositivos de altavoz',
-'2',2,null,null);
+'2',2);
 
 INSERT INTO countries VALUES
-(0,'Italy','Europe','Euro',true,true,null,null);
+(0,'Italy','Europe','Euro',true,true);
 INSERT INTO countries VALUES
-(1,'Japan','Asia','yen ',false,false,null,null);
+(1,'Japan','Asia','yen ',false,false);
 INSERT INTO countries VALUES
-(2,'Canada','America','Dollar',false,false,null,null);
+(2,'Canada','America','Dollar',false,false);
 
-INSERT INTO cities VALUES (0,'Milan',0,null,null);
-INSERT INTO cities VALUES (1,'Roma',0,null,null);
-INSERT INTO cities VALUES (2,'Bolonia',0,null,null);
-INSERT INTO cities VALUES (3,'Tokio',1,null,null);
-INSERT INTO cities VALUES (4,'Yokohama',1,null,null);
-INSERT INTO cities VALUES (5,'Koma',1,null,null);
-INSERT INTO cities VALUES (6,'Vancouver',2,null,null);
-INSERT INTO cities VALUES (7,'Toronto',2,null,null);
-INSERT INTO cities VALUES (8,'Ottawa',2,null,null);
+INSERT INTO cities VALUES (0,'Milan',0);
+INSERT INTO cities VALUES (1,'Roma',0);
+INSERT INTO cities VALUES (2,'Bolonia');
+INSERT INTO cities VALUES (3,'Tokio',1);
+INSERT INTO cities VALUES (4,'Yokohama',1);
+INSERT INTO cities VALUES (5,'Koma',1);
+INSERT INTO cities VALUES (6,'Vancouver',2);
+INSERT INTO cities VALUES (7,'Toronto',2);
+INSERT INTO cities VALUES (8,'Ottawa',2);
 
 INSERT INTO shops VALUES (0,'IKEA Milano Corsico',
                     'Via Nuova Marchesi, 4 20094 Corsico Milano',
@@ -73,79 +78,141 @@ INSERT INTO shops VALUES (0,'IKEA Milano Corsico',
                     'Modelos Ikea',
                     '33000 metros cuadrados',
                     'posea area de niños',
-                    'nrecorridos',
+                    '15',
                     '20',
-                    'stocksize',
-                    '2020/10/10',0,null,null);
+                    '5000',
+                    '2020/10/10',0);
 INSERT INTO shops VALUES (1,'IKEA Milán Carugate',
                     'Vía delle´Artigianato, 7 20061 - Carugate',
                     'IKEA Milán Carugate inaugurado en 1989 años. Esta es la primera tienda IKEA en Italia. ',
                     'Modelos Ikea',
                     '28700 metros cuadrados',
                     'posea area de niños',
-                    'nrecorridos',
+                    '30',
                     '15',
-                    'stocksize',
-                    '2020/10/10',0,null,null);
+                    '3000',
+                    '2020/10/10',0);
 INSERT INTO shops VALUES (2,'IKEA Roma Ananyina ',
                     'Via Fattoria Rampa, 35, 00173 Roma, RM, Italia',
                     'IKEA Roma Ananyina Abrió sus puertas a los clientes en 2000, situado en la carretera de circunvalación de Roma. Para llegar a la tienda, no sólo es conveniente en coche y en transporte público',
                     'Modelos Ikea',
                     '33450 metros cuadrados',
                     'posee areakids Ikea',
-                    'nrecorridos',
+                    '40',
                     '10',
-                    'stocksize',
-                    '2020/10/10',1,null,null);
+                    '10000',
+                    '2020/10/10',1;
 INSERT INTO shops VALUES (3, 'IKEA Tokyo Bay',
  '2-3 30-Hamacho, Funabashi, Chiba-273 0012',
   'IKEA BahÃ­a de Tokio, anteriormente conocido como IKEA Funabashi abriÃ³ en abril 2006 aÃ±os',
    'Modelos Ikera',
     '40000 metros cuadrados',
     'Posee area de niÃ±os',
-    'nrecorridos',
+    '29',
     40, 
-    'stocksize', 
+    '1650', 
     '2020-10-10', 
-    3, 
-    '2022-01-20 09:10:42',
-     '2022-01-20 09:10:42');
-INSERT INTO shops VALUES (4,'IKEA Vaughan', '200 Intercambio Camino Vaughan, Ontario L4K 5C3', 'IKEA Vaughan (Toronto), que se encuentra en la misma ciudad, que se encuentra en una parte del Ã¡rea metropolitana de Toronto. La tienda se abriÃ³ en 2003 aÃ±os. ', 'Modelos Ikea', '27000 Metros cuadrados', 'areakids', 'nrecorridos', 17, 'stocksize', '2020-10-10', 7, '2022-01-20 09:10:42', '2022-01-20 09:10:42');
-INSERT INTO shops VALUES (5, 'IKEA Shin Misato', 'ciudad-2 2 2-ShinMisato Lala, la ciudad de Misato, Saitama-341 0009', ' IKEA Shin Misato se encuentra en la ciudad de Saitama, que forma parte del Gran Tokio. La tienda se abriÃ³ en noviembre 19 2008 aÃ±os.', 'estilotienda1', '35000 metros cuadrados', 'Posee area niÃ±os', 'nrecorridos', 30, 'stocksize', '2020-10-10', 3, '2022-01-20 09:10:42', '2022-01-20 09:10:42');
-INSERT INTO shops VALUES (6, 'IKEA Kohoku', '201 1-Orimoto-cho, Tsuzuki-ku, Yokohama, Kanagawa-224 0043', 'La tienda se abriÃ³ el 15 de septiembre del 2006 aÃ±o', 'Modelos Ikea', '40000 metros cuadrado', 'No posee area niÃ±os', 'nrecorridos', 20, 'stocksize', '2020-10-10', 4, '2022-01-20 09:10:42', '2022-01-20 09:10:42');
-INSERT INTO shops VALUES (7, 'IKEA Puerto de Kobe Island', ' 8-7-1, Minatojima Nakamachi, Chuo-ku, Kobe, Hyogo-650 0046', 'IKEA Kobe Port Island abriÃ³ el 14 de abril de 2008.', 'Modelos Ikea', '40000', 'Posee area niÃ±os', 'nrecorridos', 40, 'stocksize', '2020-10-10', 5, '2022-01-20 09:10:42', '2022-01-20 09:10:42');
+    3);
+INSERT INTO shops VALUES (4,'IKEA Vaughan', '200 Intercambio Camino Vaughan, Ontario L4K 5C3', 'IKEA Vaughan (Toronto), que se encuentra en la misma ciudad, que se encuentra en una parte del Ã¡rea metropolitana de Toronto. La tienda se abriÃ³ en 2003 aÃ±os. ', 'Modelos Ikea', '27000 Metros cuadrados', 'areakids', '25', 17, '1500', '2020-10-10', 7);
+INSERT INTO shops VALUES (5, 'IKEA Shin Misato', 'ciudad-2 2 2-ShinMisato Lala, la ciudad de Misato, Saitama-341 0009', ' IKEA Shin Misato se encuentra en la ciudad de Saitama, que forma parte del Gran Tokio. La tienda se abriÃ³ en noviembre 19 2008 aÃ±os.', 'Modelos Ikea', '35000 metros cuadrados', 'Posee area niÃ±os', '20', 30, '2500', '2020-10-10', 3);
+INSERT INTO shops VALUES (6, 'IKEA Kohoku', '201 1-Orimoto-cho, Tsuzuki-ku, Yokohama, Kanagawa-224 0043', 'La tienda se abriÃ³ el 15 de septiembre del 2006 aÃ±o', 'Modelos Ikea', '40000 metros cuadrado', 'No posee area niños', '30', 20, '3000', '2020-10-10', 4);
+INSERT INTO shops VALUES (7, 'IKEA Puerto de Kobe Island', ' 8-7-1, Minatojima Nakamachi, Chuo-ku, Kobe, Hyogo-650 0046', 'IKEA Kobe Port Island abriÃ³ el 14 de abril de 2008.', 'Modelos Ikea', '40000', 'Posee area niños', '15', 40, '2000', '2020-10-10', 5);
 INSERT INTO shops VALUES (8,'IKEA Bolonia Casalecchio',
                    'Via John Lennon, 6, 40033 Casalecchio di Reno, Italia',
                    'IKEA Bolonia ha estado trabajando desde 1997. Además de las increíbles soluciones para su hogar que se presentan en la tienda, aquí también se crean todas las condiciones para unas buenas vacaciones familiares.',
                    'Modelos Ikea',
                    '33450 metros cuadrados',
                    'areakids',
-                   'nrecorridos',
+                   '40',
                    '10',
-                   'stocksize',
-                   '2020/10/10',2,null,null);
+                   '10000',
+                   '2020/10/10',2);
 INSERT INTO shops VALUES (9,'IKEA Coquitlam',
                 '1000 Lougheed Highway Coquitlam, Columbia Británica V3K 3T5',
                 'IKEA Coquitlam está ubicada al este de Vancouver, en la ciudad del mismo nombre. La tienda abrió en 2002.',
                 'Modelos Ikea',
                 '32000 Metros cuadrados',
                 'posee area niños',
-                'nrecorridos',
+                '22',
                 '20',
-                'stocksize',
-                '2020/10/10',6,null,null);
-INSERT INTO shops VALUES (10, 'IKEA Ottawa', 'Pinecrest centro comercial. 2685 Iris St. Ottawa, Ontario K2C 3S4', 'IKEA Ottawa Se abriÃ³ en el aÃ±o 1979.', 'Modelos Ikea', '36000 Metros cuadratos', 'Posee area de niÃ±os', 'nrecorridos', 19, 'stocksize', '2020-10-10', 8, '2022-01-20 09:10:42', '2022-01-20 09:10:42');
+                '1000',
+                '2020/10/10',6);
+INSERT INTO shops VALUES (10, 'IKEA Ottawa', 'Pinecrest centro comercial. 2685 Iris St. Ottawa, Ontario K2C 3S4', 'IKEA Ottawa Se abriÃ³ en el aÃ±o 1979.', 'Modelos Ikea', '36000 Metros cuadratos', 'Posee area de niÃ±os', 'nrecorridos', 19, 'stocksize', '2020-10-10', 8);
 
-INSERT INTO designers VALUES (0,'Cristiano','Ronaldo',null,null); 
-INSERT INTO designers VALUES (1,'Diego','Maradona',null,null);
-INSERT INTO designers VALUES (2,'Siul','Stevanelli',null,null);
-INSERT INTO designers VALUES (3,'Luis','Flores',null,null); 
-INSERT INTO designers VALUES (4,'Marco','Rodriguez',null,null);
-INSERT INTO designers VALUES (5,'Raul','Gomez',null,null);
+INSERT INTO designers VALUES (0,'Cristiano','Ronaldo'); 
+INSERT INTO designers VALUES (1,'Diego','Maradona');
+INSERT INTO designers VALUES (2,'Siul','Stevanelli');
+INSERT INTO designers VALUES (3,'Luis','Flores'); 
+INSERT INTO designers VALUES (4,'Marco','Rodriguez');
+INSERT INTO designers VALUES (5,'Raul','Gomez');
+INSERT INTO designers VALUES (6,'Cristian','Torrealba');
+INSERT INTO designers VALUES (7,'Carlos','Paredes'); 
+INSERT INTO designers VALUES (8,'Leandro','Acosta');
+INSERT INTO designers VALUES (9,'Jhosibel','Herrera');
 
-INSERT INTO catalogues VALUES (0,'2022-01-01',null, 0,null,null);  
-INSERT INTO catalogues VALUES (1,'2022-01-01',null, 2,null,null);
-INSERT INTO catalogues VALUES (2,'2022-01-01',null, 1,null,null);
+INSERT INTO products VALUES (1, 'Altavoz Wifi Balda', 'SYMFONISK', false, null, 'Compatible con Airplay 2: te permite transmitir música en streaming directamente desde tus dispositivos Apple.', 'Requiere un tratamiento de residuos especial. 
+             Ponte en contacto con tus autoridades locales para más información. 
+             Ancho: 10 cm Altura: 31 cm', 'Puedes colocar el altavoz en horizontal o en vertical, además de fijarlo a la pared y utilizarlo como estante. 
+             Te permite aprovechar mejor el espacio y difunde un sonido intenso por toda la habitación.', 8,null);
+INSERT INTO products VALUES (2, 'Regleta para cables horizontal', 'SIGNUM', false, null, 'No puede usarse como tablero de vidrio.', 'Limpiar con una suave solución jabonosa. 
+            Acero, Revestimiento en polvo pigmentado. 
+            longitud: 70 cm Ancho: 16 cm', 'Agrupa todos los cables eléctricos y del ordenador. 
+            Facilita mantener el orden en tu área de trabajo.', 5,1);
+INSERT INTO products VALUES (3, 'Cargador inalámbrico', 'NORDMÄRKE', false, 'similar', 'Ya no perderás el tiempo buscando el cargador o desenredando los cables.', 'Antes de limpiar el cargador, desconéctalo de la fuente de alimentación eléctrica. 
+            Policarbonato/plástico ABS 
+            Altura: 12 mm diámetro: 91 mm', 'Usa tu cable USB-C y el adaptador para cargar el móvil en modo inalámbrico: solo tienes que apoyarlo en el cargador', 5,1);
+INSERT INTO products VALUES (4, 'Bombilla LED E27 806 lúmenes', 'SOLHETTA', true, null, 'Como la intensidad luminosa se puede regular, puedes elegir la iluminación adecuada para cada ocasión.', 'Limpiar con un paño seco. 
+            Policarbonato/plástico ABS. 
+            diámetro: 60 mm', 'Esta bombilla LED difunde la misma luz cálida que una bombilla tradicional de 60 W, pero no parpadea ni hace ruido. Ideal para crear un ambiente agradable y acogedor.', 6,null);
+INSERT INTO products VALUES (5, 'Lámpara techo', 'MELODI', true, 'complementario', 'Un diseño sencillo, fácil de combinar con otros muebles y a un precio muy apetecible.', 'Limpiar con un paño seco. 
+            Plástico de polipropileno. 
+            diámetro: 28 cm Altura de la pantalla: 26 cm', 'La pantalla dirige la luz hacia la mesa del comedor y crea una iluminación agradable y difusa para el resto de la habitación', 1,4);
+INSERT INTO products VALUES (6, 'Guirnalda lum LED 12', 'LEDFYR', true, 'similar', 'Difunde una bonita iluminación decorativa.', 'Limpiar con un paño húmedo. Plástico policarbonado. 
+            Largo hasta la 1ª bombilla: 0.5 m Largo cable entre lámparas: 15 cm', 'Ideal para crear ambiente en las ocasiones festivas o para que todos los días del año sean especiales.', 6,5);
+INSERT INTO products VALUES (7, 'Soporte para ordenador portátil ', 'BYLLAN', false, 'similar', 'Como la funda se puede quitar y lavar a máquina, es fácil de limpiar.
+             Gracias a la base maleable, el soporte se mantiene estable sobre tu regazo o sobre cualquier otra superficie irregular.', 'Lavar junto con prendas de color similar. Plástico de polipropileno. 
+             Ancho: 51 cm Altura: 8 cm', 'Transforma la hamaca, la cama o el asiento del autobús en un lugar de trabajo más. Este soporte para portátil con una funda que puede lavarse es muy estable', 7,5);
+INSERT INTO products VALUES (8, 'Mando a distancia', 'STYRBAR', false, 'complementario', 'Puedes usar el mando a distancia STYRBAR para controlar hasta 10 bombillas LED a la vez: regular la intensidad, apagarlas y encenderlas', 'Limpiar con un paño seco. Plástico ABS.
+             longitud: 72 mm
+             Ancho: 72 mm', 'La iluminación inteligente ya está al alcance de todo el mundo. El mando a distancia STYRBAR te permite controlar diferentes fuentes de iluminación con un solo clic.', 4,5);
+INSERT INTO products VALUES (9, 'Estor opaco', 'FRIDANS', true, 'complementario', 'El estor no lleva cuerdas para la seguridad de los niños.', 'No se debe lavar a máquina. Plástico acetálico.
+            Ancho tela: 120 cm longitud: 195 cm', 'Los estores opacos evitan completamente la entrada de luz.', 4,5);
+
+--catalogo de italia
+INSERT INTO catalogues VALUES (1,8,0,15.00,'2022-01-01',null);  
+INSERT INTO catalogues VALUES (2,6,0,5.00,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (3,1,0,10.00,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (4,7,0,7.99,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (5,2,0,9.50,'2022-01-01',null); 
+--catalogo de japon
+INSERT INTO catalogues VALUES (6,1,1,11.50,'2022-01-01',null);
+INSERT INTO catalogues VALUES (7,2,1,9.50,'2022-01-01',null);  
+INSERT INTO catalogues VALUES (8,3,1,8.99,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (9,5,1,20.50,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (10,9,1,15.00,'2022-01-01',null); 
+--catalogo de canada
+INSERT INTO catalogues VALUES (11,8,2,14.50,'2022-01-01',null);
+INSERT INTO catalogues VALUES (12,4,2,3.99,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (13,1,2,8.50,'2022-01-01',null); 
+INSERT INTO catalogues VALUES (14,2,2,7.95,'2022-01-01',null);
+INSERT INTO catalogues VALUES (15,6,2,8.99,'2022-01-01',null);    
+
+--catalogo del año pasado
+INSERT INTO catalogues VALUES (16,8,0,14.00,'2021-01-01','2021-12-31');  
+INSERT INTO catalogues VALUES (17,6,0,4.00,'2021-01-01','2021-12-31'); 
+INSERT INTO catalogues VALUES (18,1,0,9.00,'2021-01-01','2021-12-31'); 
+INSERT INTO catalogues VALUES (19,7,0,6.99.00,'2021-01-01','2021-12-31'); 
+
+INSERT INTO catalogues VALUES (21,1,1,10.50,'2021-01-01','2021-12-31');
+INSERT INTO catalogues VALUES (22,2,1,8.50,'2021-01-01','2021-12-31');  
+INSERT INTO catalogues VALUES (23,3,1,7.99,'2021-01-01','2021-12-31'); 
+INSERT INTO catalogues VALUES (24,5,1,19.50,'2021-01-01','2021-12-31'); 
+
+INSERT INTO catalogues VALUES (26,8,2,13.50,'2021-01-01','2021-12-31');
+INSERT INTO catalogues VALUES (27,4,2,2.99,'2021-01-01','2021-12-31'); 
+INSERT INTO catalogues VALUES (28,1,2,9.50,'2021-01-01','2021-12-31'); 
+INSERT INTO catalogues VALUES (29,2,2,8.95,'2021-01-01','2021-12-31');
+
 
 INSERT INTO month__menus VALUES (0,'2022-01-01','2022-02-01', 12.5, 1,0,null,null);  
 INSERT INTO month__menus VALUES (1,'2022-01-01','2022-02-01', 5.00, 3,0,null,null);
@@ -163,14 +230,14 @@ INSERT INTO month__menus VALUES (10,'2022-01-01','2022-02-01', 19.99,4,2,null,nu
 INSERT INTO month__menus VALUES (11,'2022-01-01','2022-02-01', 20.00,5,2,null,null);
 
 
-INSERT INTO roles VALUES (1, 'superadmin',null,null);
-INSERT INTO roles VALUES (2, 'admin',null,null);
-INSERT INTO roles VALUES (3, 'cliente',null,null);
+--INSERT INTO roles VALUES (1, 'superadmin',null,null);
+--INSERT INTO roles VALUES (2, 'admin',null,null);
+--INSERT INTO roles VALUES (3, 'cliente',null,null);
 
 
-INSERT INTO schedules VALUES (1, '10:00 am  ', '11:00 pm  ', 'Lunes     ', 'Sabado    ', 1,null,null);
-INSERT INTO schedules VALUES (2, '8:00 am   ', '10:00 pm  ', 'Lunes     ', 'Domingo   ', 2,null,null);
-INSERT INTO schedules VALUES (3, '7:00 am   ', '11:00 pm  ', 'Lunes     ', 'Viernes   ', 0,null,null);
+INSERT INTO schedules VALUES (1, '10:00 am  ', '11:00 pm  ', 'Lunes     ', 'Sabado    ', 1);
+INSERT INTO schedules VALUES (2, '8:00 am   ', '10:00 pm  ', 'Lunes     ', 'Domingo   ', 2);
+INSERT INTO schedules VALUES (3, '7:00 am   ', '11:00 pm  ', 'Lunes     ', 'Viernes   ', 0);
 
 
 INSERT INTO users VALUES (1, 'Daniel', 'Josue', 'toro', 'Yepez', 'dtoro1996@gmail.com', '1996-11-09', 2,1, NULL, NULL, '$2y$10$sicVT1M3qMq21zfJ3McDQeTvBasFo1ySCGESmbZ1XT8X122HAzTVy',  NULL, '2022-01-20 00:19:43', '2022-01-20 00:19:43', NULL, NULL);
@@ -191,46 +258,7 @@ INSERT INTO phones VALUES (10, '+58', '02120236548', 7, NULL,null,null);
 INSERT INTO phones VALUES (0, '+58', '02125569988', 8, NULL,null,null);
 
 
-INSERT INTO products VALUES (1, 'Altavoz Wifi Balda', 'SYMFONISK', false, null, 'Compatible con Airplay 2: te permite transmitir música en streaming directamente desde tus dispositivos Apple.', 'Requiere un tratamiento de residuos especial. 
-             Ponte en contacto con tus autoridades locales para más información. 
-             Ancho: 10 cm Altura: 31 cm', 'Puedes colocar el altavoz en horizontal o en vertical, además de fijarlo a la pared y utilizarlo como estante. 
-             Te permite aprovechar mejor el espacio y difunde un sonido intenso por toda la habitación.', 8,null,null,null);
-INSERT INTO products VALUES (2, 'Regleta para cables horizontal', 'SIGNUM', false, null, 'No puede usarse como tablero de vidrio.', 'Limpiar con una suave solución jabonosa. 
-            Acero, Revestimiento en polvo pigmentado. 
-            longitud: 70 cm Ancho: 16 cm', 'Agrupa todos los cables eléctricos y del ordenador. 
-            Facilita mantener el orden en tu área de trabajo.', 5,1,null,null);
-INSERT INTO products VALUES (3, 'Cargador inalámbrico', 'NORDMÄRKE', false, 'similar', 'Ya no perderás el tiempo buscando el cargador o desenredando los cables.', 'Antes de limpiar el cargador, desconéctalo de la fuente de alimentación eléctrica. 
-            Policarbonato/plástico ABS 
-            Altura: 12 mm diámetro: 91 mm', 'Usa tu cable USB-C y el adaptador para cargar el móvil en modo inalámbrico: solo tienes que apoyarlo en el cargador', 5,1,null,null);
-INSERT INTO products VALUES (4, 'Bombilla LED E27 806 lúmenes', 'SOLHETTA', true, null, 'Como la intensidad luminosa se puede regular, puedes elegir la iluminación adecuada para cada ocasión.', 'Limpiar con un paño seco. 
-            Policarbonato/plástico ABS. 
-            diámetro: 60 mm', 'Esta bombilla LED difunde la misma luz cálida que una bombilla tradicional de 60 W, pero no parpadea ni hace ruido. Ideal para crear un ambiente agradable y acogedor.', 6,null,null,null);
-INSERT INTO products VALUES (5, 'Lámpara techo', 'MELODI', true, 'complementario', 'Un diseño sencillo, fácil de combinar con otros muebles y a un precio muy apetecible.', 'Limpiar con un paño seco. 
-            Plástico de polipropileno. 
-            diámetro: 28 cm Altura de la pantalla: 26 cm', 'La pantalla dirige la luz hacia la mesa del comedor y crea una iluminación agradable y difusa para el resto de la habitación', 1,4,null,null);
-INSERT INTO products VALUES (6, 'Guirnalda lum LED 12', 'LEDFYR', true, 'similar', 'Difunde una bonita iluminación decorativa.', 'Limpiar con un paño húmedo. Plástico policarbonado. 
-            Largo hasta la 1ª bombilla: 0.5 m Largo cable entre lámparas: 15 cm', 'Ideal para crear ambiente en las ocasiones festivas o para que todos los días del año sean especiales.', 6,5,null,null);
-INSERT INTO products VALUES (7, 'Soporte para ordenador portátil ', 'BYLLAN', false, 'similar', 'Como la funda se puede quitar y lavar a máquina, es fácil de limpiar.
-             Gracias a la base maleable, el soporte se mantiene estable sobre tu regazo o sobre cualquier otra superficie irregular.', 'Lavar junto con prendas de color similar. Plástico de polipropileno. 
-             Ancho: 51 cm Altura: 8 cm', 'Transforma la hamaca, la cama o el asiento del autobús en un lugar de trabajo más. Este soporte para portátil con una funda que puede lavarse es muy estable', 7,5,null,null);
-INSERT INTO products VALUES (8, 'Mando a distancia', 'STYRBAR', false, 'complementario', 'Puedes usar el mando a distancia STYRBAR para controlar hasta 10 bombillas LED a la vez: regular la intensidad, apagarlas y encenderlas', 'Limpiar con un paño seco. Plástico ABS.
-             longitud: 72 mm
-             Ancho: 72 mm', 'La iluminación inteligente ya está al alcance de todo el mundo. El mando a distancia STYRBAR te permite controlar diferentes fuentes de iluminación con un solo clic.', 4,5,null,null);
-INSERT INTO products VALUES (0, 'Estor opaco', 'FRIDANS', true, 'complementario', 'El estor no lleva cuerdas para la seguridad de los niños.', 'No se debe lavar a máquina. Plástico acetálico.
-            Ancho tela: 120 cm longitud: 195 cm', 'Los estores opacos evitan completamente la entrada de luz.', 4,5,null,null);
 
-INSERT INTO p__catalogues VALUES (1, 1, 1, 1, 99.99,null,null);
-INSERT INTO p__catalogues VALUES (2, 1, 2, 1, 20.99,null,null);
-INSERT INTO p__catalogues VALUES (3, 1, 3, 1, 8.99,null,null);
-INSERT INTO p__catalogues VALUES (4, 2, 1, 2, 99.99,null,null);
-INSERT INTO p__catalogues VALUES (5, 2, 4, 2, 15,null,null);
-INSERT INTO p__catalogues VALUES (6, 2, 5, 2, 60,null,null);
-INSERT INTO p__catalogues VALUES (7, 2, 2, 2, 20.99,null,null);
-INSERT INTO p__catalogues VALUES (8, 2, 8, 2, 70,null,null);
-INSERT INTO p__catalogues VALUES (9, 0, 1, 0, 99.99,null,null);
-INSERT INTO p__catalogues VALUES (10, 0, 6, 0, 99.99,null,null);
-INSERT INTO p__catalogues VALUES (11, 0, 7, 0, 99.99,null,null);
-INSERT INTO p__catalogues VALUES (0, 0, 8, 0, 99.99,null,null);
 
 INSERT INTO affiliated_clients VALUES (0,5,true,'2021-9-9',1,null,null);
 INSERT INTO affiliated_clients VALUES (1,5,true,'2021-11-11',2,null,null);
