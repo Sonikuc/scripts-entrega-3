@@ -33,7 +33,7 @@ CREATE TABLE  clients
     second_name character varying(255) ,
     last_name character varying(255)  NOT NULL,
     second_last_name character varying(255) ,
-	email character varying NOT NULL,
+ --	email character varying NOT NULL,
     fecha_nac date NOT NULL,
    -- role_id bigint NOT NULL,
     city_id bigint NOT NULL,
@@ -234,10 +234,10 @@ CREATE TABLE  annual_payments
 CREATE TABLE  schedules
 (
     id bigint NOT NULL,
-    start_time date,
-    end_time date,
-    start_day date NOT NULL,
-    end_day date NOT NULL,
+    start_time time NOT NULL,
+    end_time time NOT NULL,
+    start_day varchar(15) NOT NULL,
+    end_day varchar(15) NOT NULL,
     country_id bigint,
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
@@ -280,7 +280,6 @@ CREATE TABLE  payment_instruments
 
 CREATE TABLE  phones
 ( 
-	id bigint NOT NULL,
     code numeric(4)  NOT NULL,
     "number" numeric(20)  NOT NULL,
     shop_id bigint,
@@ -288,7 +287,7 @@ CREATE TABLE  phones
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT phones_pkey PRIMARY KEY (id),
+    CONSTRAINT phones_pkey PRIMARY KEY (code,"number"),
     CONSTRAINT phones_shop_id_foreign FOREIGN KEY (shop_id)
         REFERENCES shops (id),
     CONSTRAINT phones_client_id_foreign FOREIGN KEY (client_id)
