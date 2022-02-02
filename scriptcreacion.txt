@@ -408,6 +408,7 @@ CREATE TABLE  c_offers
 
 --CREATE TABLE  roles
 --(
+    --
 --    id bigint NOT NULL,
  --   name character(30)  NOT NULL,
 --    created_at timestamp(0) without time zone,
