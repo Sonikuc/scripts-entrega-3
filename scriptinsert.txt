@@ -64,7 +64,7 @@ INSERT INTO countries VALUES
 
 INSERT INTO cities VALUES (0,'Milan',0);
 INSERT INTO cities VALUES (1,'Roma',0);
-INSERT INTO cities VALUES (2,'Bolonia');
+INSERT INTO cities VALUES (2,'Bolonia',0);
 INSERT INTO cities VALUES (3,'Tokio',1);
 INSERT INTO cities VALUES (4,'Yokohama',1);
 INSERT INTO cities VALUES (5,'Koma',1);
