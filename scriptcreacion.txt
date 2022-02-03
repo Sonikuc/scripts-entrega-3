@@ -47,7 +47,7 @@ CREATE TABLE  clients
   --  two_factor_recovery_codes text,
   --  CONSTRAINT users_email_unique UNIQUE (email),
 
-    CONSTRAINT users_pkey PRIMARY KEY (id),
+    CONSTRAINT clients_pkey PRIMARY KEY (id),
    -- CONSTRAINT users_role_id_foreign FOREIGN KEY (role_id)
    --     REFERENCES roles (id), 
     CONSTRAINT client_city_id_foreign FOREIGN KEY (city_id)
