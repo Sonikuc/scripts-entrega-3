@@ -315,12 +315,12 @@ INSERT INTO annual_payments VALUES ('2016-5-8',2);
 INSERT INTO events VALUES (0,'Carnavales','Descuentos y muebles decorativos por carnavales','2021-02-01','2021-02-28',6);
 INSERT INTO events VALUES (1,'Navidades','Descuentos y muebles decorativos por navidad','2021-12-01','2021-12-31',5);
 INSERT INTO events VALUES (2,'Carnavales','Descuentos y muebles decorativos por carnavales','2021-02-01','2021-02-28',3);
-INSERT INTO events VALUES (3,'Año nuevo chino','Descuentos y muebles decorativos por el año unevo chino','2022-02-01','2021-02-01',2);
-INSERT INTO events VALUES (4,'Pascuas','Descuentos y muebles decorativos por pascuas','2021-04-17','2021-04-17',1);
+INSERT INTO events VALUES (3,'Año nuevo chino','Descuentos y muebles decorativos por el año unevo chino','2022-02-01','2021-02-04',2);
+INSERT INTO events VALUES (4,'Pascuas','Descuentos y muebles decorativos por pascuas','2022-04-17','2022-04-17',1);
 INSERT INTO events VALUES (5,'Carnavales','Descuentos y muebles decorativos por carnavales','2021-02-01','2021-02-28',0);
-INSERT INTO events VALUES (6,'Pascuas','Descuentos y muebles decorativos por pascuas','2021-04-17','2021-04-17',8);
-INSERT INTO events VALUES (7,'Semana Santa','Descuento por semana santa','2021-04-10','2021-04-16',9);
-INSERT INTO events VALUES (8,'Pascuas','Descuentos y muebles decorativos por pascuas','2021-04-17','2021-04-17',9);
+INSERT INTO events VALUES (6,'Pascuas','Descuentos y muebles decorativos por pascuas','2022-04-17','2022-04-17',8);
+INSERT INTO events VALUES (7,'Semana Santa','Descuento por semana santa','2022-04-10','2022-04-16',9);
+INSERT INTO events VALUES (8,'Pascuas','Descuentos y muebles decorativos por pascuas','2022-04-17','2022-04-17',9);
 INSERT INTO events VALUES (9,'Año nuevo chino','Descuentos y muebles decorativos por el año nuevo chino','2022-02-01','2021-02-01',1);
 
 INSERT INTO cash_registers VALUES (0,'rapido',2);
