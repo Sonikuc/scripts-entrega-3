@@ -291,25 +291,25 @@ INSERT INTO phones VALUES (58, '04165559847', NULL, 3);
 INSERT INTO phones VALUES (39, '02128706099', 0, NULL);
 INSERT INTO phones VALUES (39, '02128706019', 1, NULL);
 INSERT INTO phones VALUES (39, '02122900715', 2, NULL);
-INSERT INTO phones VALUES (39, '02129965847', 3, NULL);
-INSERT INTO phones VALUES (81, '02123698521', 4, NULL);
+INSERT INTO phones VALUES (39, '02129965847', 7, NULL);
+INSERT INTO phones VALUES (81, '02123698521', 3, NULL);
 INSERT INTO phones VALUES (81, '02124563214', 5, NULL);
 INSERT INTO phones VALUES (81, '02127896532', 6, NULL);
 INSERT INTO phones VALUES (81, '02120236548', 7, NULL);
-INSERT INTO phones VALUES (1, '02125567988', 8, NULL);
+INSERT INTO phones VALUES (1, '02125567988', 4, NULL);
 INSERT INTO phones VALUES (1, '02125562988', 9, NULL);
 INSERT INTO phones VALUES (1, '02125560988', 10, NULL);
 
 
 
 
-INSERT INTO affiliated_clients VALUES (0,5,true,'2021-9-9',1);
+INSERT INTO affiliated_clients VALUES (0,5,true,'2022-9-9',1);
 INSERT INTO affiliated_clients VALUES (1,5,true,'2021-11-11',2);
-INSERT INTO affiliated_clients VALUES (2,5,true,'2021-12-12',3);
+INSERT INTO affiliated_clients VALUES (2,5,true,'2021-5-8',3);
 
-INSERT INTO annual_payments VALUES ('2022-9-20',0);
-INSERT INTO annual_payments VALUES ('2011-11-11',1);
-INSERT INTO annual_payments VALUES ('2016-5-8',2);
+INSERT INTO annual_payments VALUES ('2022-9-9',0);
+INSERT INTO annual_payments VALUES ('2021-11-11',1);
+INSERT INTO annual_payments VALUES ('2021-5-8',2);
 
 
 INSERT INTO events VALUES (0,'Carnavales','Descuentos y muebles decorativos por carnavales','2021-02-01','2021-02-28',6);
@@ -414,14 +414,14 @@ INSERT INTO offers VALUES (14,'2021-02-02','2021-02-21',20,5);
 INSERT INTO offers VALUES (15,'2021-02-02','2021-02-21',20,5);
 INSERT INTO offers VALUES (16,'2021-02-02','2021-02-21',20,5);
 
-INSERT INTO c_offers VALUES(6,7);  --solo hay ofertas en los productos de las tiendas de 
-INSERT INTO c_offers VALUES(7,9);  -- canada y japon
-INSERT INTO c_offers VALUES(8,8);
-INSERT INTO c_offers VALUES(9,10);
-INSERT INTO c_offers VALUES(10,11);
-INSERT INTO c_offers VALUES(11,16);
-INSERT INTO c_offers VALUES(12,15);
-INSERT INTO c_offers VALUES(13,12);
-INSERT INTO c_offers VALUES(14,14);
-INSERT INTO c_offers VALUES(15,13);
+INSERT INTO c_offers VALUES(6,13);  --solo hay ofertas en los productos de las tiendas de 
+INSERT INTO c_offers VALUES(7,14);  -- canada y japon
+INSERT INTO c_offers VALUES(8,15);
+INSERT INTO c_offers VALUES(9,16);
+INSERT INTO c_offers VALUES(10,4);
+INSERT INTO c_offers VALUES(11,3);
+INSERT INTO c_offers VALUES(12,3);
+INSERT INTO c_offers VALUES(13,10);
+INSERT INTO c_offers VALUES(14,3);
+INSERT INTO c_offers VALUES(15,10);
 
