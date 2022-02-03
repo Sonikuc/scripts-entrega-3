@@ -414,14 +414,14 @@ INSERT INTO offers VALUES (14,'2021-02-02','2021-02-21',20,5);
 INSERT INTO offers VALUES (15,'2021-02-02','2021-02-21',20,5);
 INSERT INTO offers VALUES (16,'2021-02-02','2021-02-21',20,5);
 
-INSERT INTO c_offers VALUES(6,7);  --solo hay ofertas en los productos de las tiendas de 
-INSERT INTO c_offers VALUES(7,9);  -- canada y japon
-INSERT INTO c_offers VALUES(8,8);
-INSERT INTO c_offers VALUES(9,10);
-INSERT INTO c_offers VALUES(10,11);
-INSERT INTO c_offers VALUES(11,16);
-INSERT INTO c_offers VALUES(12,15);
-INSERT INTO c_offers VALUES(13,12);
-INSERT INTO c_offers VALUES(14,14);
-INSERT INTO c_offers VALUES(15,13);
+INSERT INTO c_offers VALUES(6,13);  --solo hay ofertas en los productos de las tiendas de 
+INSERT INTO c_offers VALUES(7,14);  -- canada y japon
+INSERT INTO c_offers VALUES(8,15);
+INSERT INTO c_offers VALUES(9,16);
+INSERT INTO c_offers VALUES(10,4);
+INSERT INTO c_offers VALUES(11,3);
+INSERT INTO c_offers VALUES(12,3);
+INSERT INTO c_offers VALUES(13,10);
+INSERT INTO c_offers VALUES(14,3);
+INSERT INTO c_offers VALUES(15,10);
 
