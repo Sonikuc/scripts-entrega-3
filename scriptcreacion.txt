@@ -1,7 +1,7 @@
 CREATE TABLE  countries
 (
-    id bigint NOT NULL,
-    name character varying(255)  NOT NULL,
+    id bigint NOT NULL UNIQUE,
+    name character varying(255),
     continent character varying(255)  NOT NULL,
     moneda character(20)  NOT NULL,
     "Europe_Union" boolean NOT NULL,
@@ -15,20 +15,21 @@ CREATE TABLE  countries
 
 CREATE TABLE  cities
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
     name character varying(255)  NOT NULL,
     country_id bigint NOT NULL,
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT cities_pkey PRIMARY KEY (id),
+    CONSTRAINT cities_pkey PRIMARY KEY (id,country_id),
     CONSTRAINT cities_country_id_foreign FOREIGN KEY (country_id)
         REFERENCES countries (id)        
 );
 
 CREATE TABLE  clients
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
+    docid bigint NOT NULL UNIQUE,
     name character varying(255)  NOT NULL,
     second_name character varying(255) ,
     last_name character varying(255)  NOT NULL,
@@ -47,7 +48,7 @@ CREATE TABLE  clients
   --  two_factor_recovery_codes text,
   --  CONSTRAINT users_email_unique UNIQUE (email),
 
-    CONSTRAINT clients_pkey PRIMARY KEY (id),
+    CONSTRAINT clients_pkey PRIMARY KEY (id,docid),
    -- CONSTRAINT users_role_id_foreign FOREIGN KEY (role_id)
    --     REFERENCES roles (id), 
     CONSTRAINT client_city_id_foreign FOREIGN KEY (city_id)
@@ -187,6 +188,7 @@ CREATE TABLE  catalogues
 CREATE TABLE  sons
 (
     id bigint NOT NULL,
+    docid bigint NOT NULL,
     name character varying(255)  NOT NULL,
     last_name character varying(255)  NOT NULL,
     date_of_birth date NOT NULL,
@@ -195,7 +197,7 @@ CREATE TABLE  sons
   --  created_at timestamp(0) without time zone,
   --  updated_at timestamp(0) without time zone,
 
-    CONSTRAINT sons_pkey PRIMARY KEY (id),
+    CONSTRAINT sons_pkey PRIMARY KEY (id, docid),
 	constraint gender_values check (gender in ('F','M')),
     CONSTRAINT sons_client_id_foreign FOREIGN KEY (client_id)
         REFERENCES clients (id)
@@ -204,15 +206,16 @@ CREATE TABLE  sons
 
 CREATE TABLE  affiliated_clients
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
+    docid bigint NOT NULL,
     discount integer NOT NULL,
     payment boolean NOT NULL,
     membership_date date NOT NULL,
-    client_id bigint NOT NULL,
+    client_id bigint NOT NULL UNIQUE,
   --  created_at timestamp(0) without time zone,
   --  updated_at timestamp(0) without time zone,
 
-    CONSTRAINT affiliated_clients_pkey PRIMARY KEY (id),
+    CONSTRAINT affiliated_clients_pkey PRIMARY KEY (id,docid,client_id),
     CONSTRAINT affiliated_clients_client_id_foreign FOREIGN KEY (client_id)
         REFERENCES clients (id)
 );
@@ -223,10 +226,11 @@ CREATE TABLE  annual_payments
    -- id bigint NOT NULL,
     year date NOT NULL,
     affiliated_client_id bigint NOT NULL,
+    docid bigint NOT NULL,
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT annual_payments_pkey PRIMARY KEY (year,affiliated_client_id),
+    CONSTRAINT annual_payments_pkey PRIMARY KEY (year,affiliated_client_id,docid),
    CONSTRAINT annual_payments_affiliated_client_id_foreign FOREIGN KEY (affiliated_client_id)
         REFERENCES affiliated_clients (id)         
 );
@@ -242,7 +246,7 @@ CREATE TABLE  schedules
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT schedules_pkey PRIMARY KEY (id),
+    CONSTRAINT schedules_pkey PRIMARY KEY (id,country_id),
     CONSTRAINT schedules_country_id_foreign FOREIGN KEY (country_id)
         REFERENCES countries (id)        
 );
@@ -259,14 +263,15 @@ CREATE TABLE  events
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT events_pkey PRIMARY KEY (id),
+    CONSTRAINT events_pkey PRIMARY KEY (id,shop_id),
     CONSTRAINT events_shop_id_foreign FOREIGN KEY (shop_id)
         REFERENCES shops (id)        
 );
 
 CREATE TABLE  payment_instruments
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
+    docid bigint NOT NULL,
     card_number character varying(255),
     expiration_date date ,
     email character varying(255),
@@ -274,7 +279,7 @@ CREATE TABLE  payment_instruments
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT payment_instruments_pkey PRIMARY KEY (id)
+    CONSTRAINT payment_instruments_pkey PRIMARY KEY (id,docid)
 );
 
 
@@ -316,13 +321,13 @@ CREATE TABLE  month_menus
 
 CREATE TABLE  cash_registers
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
     type character varying(100)  NOT NULL,
     shop_id bigint,
  --   created_at timestamp(0) without time zone,
  --   updated_at timestamp(0) without time zone,
 
-    CONSTRAINT cash_registers_pkey PRIMARY KEY (id),
+    CONSTRAINT cash_registers_pkey PRIMARY KEY (id,shop_id),
     CONSTRAINT cash_registers_shop_id_foreign FOREIGN KEY (shop_id)
         REFERENCES shops (id)        
 );
@@ -346,7 +351,7 @@ CREATE TABLE  offers
 
 CREATE TABLE  bills
 (
-    id bigint NOT NULL,
+    id bigint NOT NULL UNIQUE,
     issue_date date NOT NULL,
     total numeric(10,2),
     transport boolean DEFAULT false,
@@ -357,7 +362,7 @@ CREATE TABLE  bills
 
   --  created_at timestamp(0) without time zone,
   --  updated_at timestamp(0) without time zone,
-    CONSTRAINT bills_pkey PRIMARY KEY (id),
+    CONSTRAINT bills_pkey PRIMARY KEY (id,cash_register_id),
     CONSTRAINT bills_cash_register_id_foreign FOREIGN KEY (cash_register_id)
         REFERENCES cash_registers (id), 
         
@@ -382,7 +387,7 @@ CREATE TABLE  bill_details
 
   --  created_at timestamp(0) without time zone,
   --  updated_at timestamp(0) without time zone,
-    CONSTRAINT bill_details_pkey PRIMARY KEY (id),
+    CONSTRAINT bill_details_pkey PRIMARY KEY (id,bill_id),
     CONSTRAINT bill_details_bill_id_foreign FOREIGN KEY (bill_id)
         REFERENCES bills (id),      
     CONSTRAINT bill_details_catalogue_id_foreign FOREIGN KEY (catalogue_id)
@@ -404,13 +409,3 @@ CREATE TABLE  c_offers
     CONSTRAINT c_offers_offer_id_foreign FOREIGN KEY (offer_id)
         REFERENCES offers (id)       
 );
-
---CREATE TABLE  roles
---(
-    --
---    id bigint NOT NULL,
- --   name character(30)  NOT NULL,
---    created_at timestamp(0) without time zone,
- --   updated_at timestamp(0) without time zone,
-  --  CONSTRAINT roles_pkey PRIMARY KEY (id)
---);

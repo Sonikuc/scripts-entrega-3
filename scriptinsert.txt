@@ -150,33 +150,43 @@ INSERT INTO designers VALUES (7,'Carlos','Paredes');
 INSERT INTO designers VALUES (8,'Leandro','Acosta');
 INSERT INTO designers VALUES (9,'Jhosibel','Herrera');
 
-INSERT INTO products VALUES (1, 'Altavoz Wifi Balda', 'SYMFONISK', false, null, 'Compatible con Airplay 2: te permite transmitir música en streaming directamente desde tus dispositivos Apple.', 'Requiere un tratamiento de residuos especial. 
-             Ponte en contacto con tus autoridades locales para más información. 
-             Ancho: 10 cm Altura: 31 cm', 'Puedes colocar el altavoz en horizontal o en vertical, además de fijarlo a la pared y utilizarlo como estante. 
-             Te permite aprovechar mejor el espacio y difunde un sonido intenso por toda la habitación.', 8,null);
-INSERT INTO products VALUES (2, 'Regleta para cables horizontal', 'SIGNUM', false, null, 'No puede usarse como tablero de vidrio.', 'Limpiar con una suave solución jabonosa. 
-            Acero, Revestimiento en polvo pigmentado. 
-            longitud: 70 cm Ancho: 16 cm', 'Agrupa todos los cables eléctricos y del ordenador. 
-            Facilita mantener el orden en tu área de trabajo.', 5,1);
-INSERT INTO products VALUES (3, 'Cargador inalámbrico', 'NORDMÄRKE', false, 'similar', 'Ya no perderás el tiempo buscando el cargador o desenredando los cables.', 'Antes de limpiar el cargador, desconéctalo de la fuente de alimentación eléctrica. 
-            Policarbonato/plástico ABS 
-            Altura: 12 mm diámetro: 91 mm', 'Usa tu cable USB-C y el adaptador para cargar el móvil en modo inalámbrico: solo tienes que apoyarlo en el cargador', 5,1);
-INSERT INTO products VALUES (4, 'Bombilla LED E27 806 lúmenes', 'SOLHETTA', true, null, 'Como la intensidad luminosa se puede regular, puedes elegir la iluminación adecuada para cada ocasión.', 'Limpiar con un paño seco. 
-            Policarbonato/plástico ABS. 
-            diámetro: 60 mm', 'Esta bombilla LED difunde la misma luz cálida que una bombilla tradicional de 60 W, pero no parpadea ni hace ruido. Ideal para crear un ambiente agradable y acogedor.', 6,null);
-INSERT INTO products VALUES (5, 'Lámpara techo', 'MELODI', true, 'complementario', 'Un diseño sencillo, fácil de combinar con otros muebles y a un precio muy apetecible.', 'Limpiar con un paño seco. 
-            Plástico de polipropileno. 
-            diámetro: 28 cm Altura de la pantalla: 26 cm', 'La pantalla dirige la luz hacia la mesa del comedor y crea una iluminación agradable y difusa para el resto de la habitación', 1,4);
-INSERT INTO products VALUES (6, 'Guirnalda lum LED 12', 'LEDFYR', true, 'similar', 'Difunde una bonita iluminación decorativa.', 'Limpiar con un paño húmedo. Plástico policarbonado. 
-            Largo hasta la 1ª bombilla: 0.5 m Largo cable entre lámparas: 15 cm', 'Ideal para crear ambiente en las ocasiones festivas o para que todos los días del año sean especiales.', 6,5);
-INSERT INTO products VALUES (7, 'Soporte para ordenador portátil ', 'BYLLAN', false, 'similar', 'Como la funda se puede quitar y lavar a máquina, es fácil de limpiar.
-             Gracias a la base maleable, el soporte se mantiene estable sobre tu regazo o sobre cualquier otra superficie irregular.', 'Lavar junto con prendas de color similar. Plástico de polipropileno. 
-             Ancho: 51 cm Altura: 8 cm', 'Transforma la hamaca, la cama o el asiento del autobús en un lugar de trabajo más. Este soporte para portátil con una funda que puede lavarse es muy estable', 7,5);
-INSERT INTO products VALUES (8, 'Mando a distancia', 'STYRBAR', false, 'complementario', 'Puedes usar el mando a distancia STYRBAR para controlar hasta 10 bombillas LED a la vez: regular la intensidad, apagarlas y encenderlas', 'Limpiar con un paño seco. Plástico ABS.
-             longitud: 72 mm
-             Ancho: 72 mm', 'La iluminación inteligente ya está al alcance de todo el mundo. El mando a distancia STYRBAR te permite controlar diferentes fuentes de iluminación con un solo clic.', 4,5);
-INSERT INTO products VALUES (9, 'Estor opaco', 'FRIDANS', true, 'complementario', 'El estor no lleva cuerdas para la seguridad de los niños.', 'No se debe lavar a máquina. Plástico acetálico.
-            Ancho tela: 120 cm longitud: 195 cm', 'Los estores opacos evitan completamente la entrada de luz.', 4,5);
+INSERT INTO products VALUES (1, 'Altavoz Wifi Balda', 'SYMFONISK', false, null, 'Compatible con Airplay 2: te permite transmitir música en streaming directamente desde tus dispositivos Apple.',
+            'Requiere un tratamiento de residuos especial. Ponte en contacto con tus autoridades locales para más información. Ancho: 10 cm Altura: 31 cm', 
+            'Puedes colocar el altavoz en horizontal o en vertical, además de fijarlo a la pared y utilizarlo como estante. Te permite aprovechar mejor el espacio y difunde un sonido intenso por toda la habitación.', 8,null);
+
+INSERT INTO products VALUES (2, 'Regleta para cables horizontal', 'SIGNUM', false, null, 'No puede usarse como tablero de vidrio.', 
+            'Limpiar con una suave solución jabonosa. Acero, Revestimiento en polvo pigmentado. Longitud: 70 cm Ancho: 16 cm', 
+            'Agrupa todos los cables eléctricos y del ordenador. Facilita mantener el orden en tu área de trabajo.', 5,1);
+
+INSERT INTO products VALUES (3, 'Cargador inalámbrico', 'NORDMÄRKE', false, 'similar', 'Ya no perderás el tiempo buscando el cargador o desenredando los cables.', 
+            'Antes de limpiar el cargador, desconéctalo de la fuente de alimentación eléctrica. Policarbonato/plástico ABS Altura: 12 mm diámetro: 91 mm',
+            'Usa tu cable USB-C y el adaptador para cargar el móvil en modo inalámbrico: solo tienes que apoyarlo en el cargador', 5,1);
+
+INSERT INTO products VALUES (4, 'Bombilla LED E27 806 lúmenes', 'SOLHETTA', true, null, 'Como la intensidad luminosa se puede regular, puedes elegir la iluminación adecuada para cada ocasión.',
+            'Limpiar con un paño seco. Policarbonato/plástico ABS. Diámetro: 60 mm', 
+            'Esta bombilla LED difunde la misma luz cálida que una bombilla tradicional de 60 W, pero no parpadea ni hace ruido. Ideal para crear un ambiente agradable y acogedor.', 6,null);
+
+INSERT INTO products VALUES (5, 'Lámpara techo', 'MELODI', true, 'complementario', 'Un diseño sencillo, fácil de combinar con otros muebles y a un precio muy apetecible.',
+            'Limpiar con un paño seco. Plástico de polipropileno. Diámetro: 28 cm Altura de la pantalla: 26 cm',
+            'La pantalla dirige la luz hacia la mesa del comedor y crea una iluminación agradable y difusa para el resto de la habitación', 1,4);
+
+INSERT INTO products VALUES (6, 'Guirnalda lum LED 12', 'LEDFYR', true, 'similar', 'Difunde una bonita iluminación decorativa.', 
+            'Limpiar con un paño húmedo. Plástico policarbonado. Largo hasta la 1ª bombilla: 0.5 m Largo cable entre lámparas: 15 cm',
+            'Ideal para crear ambiente en las ocasiones festivas o para que todos los días del año sean especiales.', 6,5);
+
+INSERT INTO products VALUES (7, 'Soporte para ordenador portátil ', 'BYLLAN', false, 'similar',
+            'Como la funda se puede quitar y lavar a máquina, es fácil de limpiar. Gracias a la base maleable, el soporte se mantiene estable sobre tu regazo o sobre cualquier otra superficie irregular.',
+            'Lavar junto con prendas de color similar. Plástico de polipropileno. Ancho: 51 cm Altura: 8 cm',
+            'Transforma la hamaca, la cama o el asiento del autobús en un lugar de trabajo más. Este soporte para portátil con una funda que puede lavarse es muy estable', 7,5);
+
+INSERT INTO products VALUES (8, 'Mando a distancia', 'STYRBAR', false, 'complementario',
+            'Puedes usar el mando a distancia STYRBAR para controlar hasta 10 bombillas LED a la vez: regular la intensidad, apagarlas y encenderlas', 
+            'Limpiar con un paño seco. Plástico ABS. Longitud: 72 mm Ancho: 72 mm',
+            'La iluminación inteligente ya está al alcance de todo el mundo. El mando a distancia STYRBAR te permite controlar diferentes fuentes de iluminación con un solo clic.', 4,5);
+
+INSERT INTO products VALUES (9, 'Estor opaco', 'FRIDANS', true, 'complementario', 'El estor no lleva cuerdas para la seguridad de los niños.',
+            'No se debe lavar a máquina. Plástico acetálico. Ancho tela: 120 cm longitud: 195 cm',
+            'Los estores opacos evitan completamente la entrada de luz.', 4,5);
 
 --catalogo de italia
 INSERT INTO catalogues VALUES (1,8,0,15.00,'2022-01-01',null);  
@@ -273,15 +283,15 @@ INSERT INTO schedules VALUES (2, '8:00:00', '22:00:00', 'Lunes', 'Domingo', 2);
 INSERT INTO schedules VALUES (3, '7:00:00', '23:00:00', 'Lunes', 'Viernes', 0);
 
 
-INSERT INTO clients VALUES (1, 'Daniel', 'Josue', 'toro', 'Yepez', '1996-11-09', 0);
-INSERT INTO clients VALUES (2, 'Diego', 'Andres', 'Suarez', 'Contreras', '2000-04-14', 1);
-INSERT INTO clients VALUES (3, 'Siul', 'marco', 'Pimentel', 'Balboa',  '1998-01-09', 2);
-INSERT INTO clients VALUES (4, 'Luis', 'marco', 'Dorante', 'Gomez',  '1997-01-09', 2);
-INSERT INTO clients VALUES (5, 'Aida', 'Isolina', 'Contreras', 'Bracamonte',  '1997-01-09', 2);
-INSERT INTO clients VALUES (6, 'Daniel', 'Augusto', 'Suarez', 'Zambrano',  '1997-01-09', 2);
-INSERT INTO clients VALUES (7, 'Gabriel', 'Jose', 'Paredes', 'Guzman',  '1997-01-09', 2);
-INSERT INTO clients VALUES (8, 'Giussepe', 'Lambo', 'Herrera', 'Lopez',  '1997-01-09', 2);
-INSERT INTO clients VALUES (9, 'Martin', 'Mario', 'Madrazo', 'Martinez',  '1997-01-09', 2);
+INSERT INTO clients VALUES (1, 25999686, 'Daniel', 'Josue', 'toro', 'Yepez', '1996-11-09', 0);
+INSERT INTO clients VALUES (2, 27753455, 'Diego', 'Andres', 'Suarez', 'Contreras', '2000-04-14', 1);
+INSERT INTO clients VALUES (3, 25888966, 'Siul', 'marco', 'Pimentel', 'Balboa',  '1998-01-09', 2);
+INSERT INTO clients VALUES (4, 20169874, 'Luis', 'marco', 'Dorante', 'Gomez',  '1997-01-09', 3);
+INSERT INTO clients VALUES (5, 10631046, 'Aida', 'Isolina', 'Contreras', 'Bracamonte',  '1997-01-09', 4);
+INSERT INTO clients VALUES (6, 10119871, 'Daniel', 'Augusto', 'Suarez', 'Zambrano',  '1997-01-09', 5);
+INSERT INTO clients VALUES (7, 28669321, 'Gabriel', 'Jose', 'Paredes', 'Guzman',  '1997-01-09', 6);
+INSERT INTO clients VALUES (8, 28555666, 'Giussepe', 'Lambo', 'Herrera', 'Lopez',  '1997-01-09', 7);
+INSERT INTO clients VALUES (9, 10002665, 'Martin', 'Mario', 'Madrazo', 'Martinez',  '1997-01-09',8);
 
 
 
@@ -303,13 +313,13 @@ INSERT INTO phones VALUES (1, '02125560988', 10, NULL);
 
 
 
-INSERT INTO affiliated_clients VALUES (0,5,true,'2022-9-9',1);
-INSERT INTO affiliated_clients VALUES (1,5,true,'2021-11-11',2);
-INSERT INTO affiliated_clients VALUES (2,5,true,'2021-5-8',3);
+INSERT INTO affiliated_clients VALUES (1, 25999686,5,true,'2022-9-9',1);
+INSERT INTO affiliated_clients VALUES (2, 27753455,5,true,'2021-11-11',2);
+INSERT INTO affiliated_clients VALUES (3, 25888966,5,true,'2021-5-8',3);
 
-INSERT INTO annual_payments VALUES ('2022-9-9',0);
-INSERT INTO annual_payments VALUES ('2021-11-11',1);
-INSERT INTO annual_payments VALUES ('2021-5-8',2);
+INSERT INTO annual_payments VALUES ('2022-9-9',1,   25999686);
+INSERT INTO annual_payments VALUES ('2021-11-11',2, 27753455);
+INSERT INTO annual_payments VALUES ('2021-5-8',3,   25888966);
 
 
 INSERT INTO events VALUES (0,'Carnavales','Descuentos y muebles decorativos por carnavales','2021-02-01','2021-02-28',6);
@@ -349,19 +359,30 @@ INSERT INTO p_designers VALUES (8,9);
 INSERT INTO p_designers VALUES (9,7);
 INSERT INTO p_designers VALUES (1,3);
 
+INSERT INTO p_categories VALUES (1,8);
+INSERT INTO p_categories VALUES (2,3);
+INSERT INTO p_categories VALUES (3,5);
+INSERT INTO p_categories VALUES (4,6);
+INSERT INTO p_categories VALUES (5,4);
+INSERT INTO p_categories VALUES (6,6);
+INSERT INTO p_categories VALUES (7,7);
+INSERT INTO p_categories VALUES (8,4);
+INSERT INTO p_categories VALUES (9,4);
 
-INSERT INTO sons VALUES (0,'raul','suarez','2002-12-13','M',2);
-INSERT INTO sons VALUES (1,'pedro','suarez','2001-11-15','M',2);
-INSERT INTO sons VALUES (2,'petra','toro','2006-12-23','F',1);
-INSERT INTO sons VALUES (3,'luis','pimentel','2002-02-03','M',3);
-INSERT INTO sons VALUES (4,'annie','toro','2006-12-23','F',1);
 
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (0,51235555632319,'2021-12-13','tarjeta');
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (1,65435555632487,'2025-03-29','tarjeta');
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (2,51237463513124,'2036-12-13','tarjeta');
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (3,51235555632487,'2022-11-12','tarjeta');
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (4,21215555632487,'2022-12-13','tarjeta');
-INSERT INTO payment_instruments (id,card_number,expiration_date,type) VALUES (5,51235555632138,'2028-05-10','tarjeta');
+
+INSERT INTO sons VALUES (0, 29663666,'raul','suarez','2002-12-13','M',2);
+INSERT INTO sons VALUES (1, 30159632,'pedro','suarez','2001-11-15','M',2);
+INSERT INTO sons VALUES (2, 30147896,'petra','toro','2006-12-23','F',1);
+INSERT INTO sons VALUES (3, 31258998,'luis','pimentel','2002-02-03','M',3);
+INSERT INTO sons VALUES (4, 31556478,'annie','toro','2006-12-23','F',1);
+
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (0,51235555632319,'2021-12-13','tarjeta',27753455);
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (1,65435555632487,'2025-03-29','tarjeta',10631046);
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (2,51237463513124,'2036-12-13','tarjeta',10119871);
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (3,51235555632487,'2022-11-12','tarjeta',28669321);
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (4,21215555632487,'2022-12-13','tarjeta',10002665);
+INSERT INTO payment_instruments (id,card_number,expiration_date,type,docid) VALUES (5,51235555632138,'2028-05-10','tarjeta',28555666);
 
 
 INSERT INTO bills VALUES (1,'2022-1-13',52.99,true,'debito',2,1,1); -- tienda de italia
